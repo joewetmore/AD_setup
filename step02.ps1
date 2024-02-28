@@ -1,4 +1,4 @@
- #STEP 02 - Create the AD forest & domain
+#STEP 02 - Create the AD forest & domain
 
 #Set the Log File Location
 $LogFile = "C:\AD_setup\logs\AD_setup.log"
@@ -18,6 +18,8 @@ Function Write-Log {
 
 
 Clear-Host
+
+Write-Log "Beginning STEP02 of AD_Setup"
 
 #Setup variables
 Write-Host " "
@@ -40,7 +42,8 @@ Write-Host "-----Installing ADDS---------------------------" -ForegroundColor Gr
 Write-Host "-----------------------------------------------" -ForegroundColor Green
 Write-Host " "
 Install-Windowsfeature -Name AD-Domain-Services -IncludeManagementTool
-Write-Log "installed ADDS feature" 
+Write-Log "installing ADDS feature" 
+Write-Log -level ERROR -message "ERROR installing ADDS feature" 
 
 #Create the forest and reboot. 
 Write-Host " "
@@ -60,4 +63,3 @@ $HashArguments = @{
     SafeModeAdministratorPassword  = $SMPassword 
 }
 Install-ADDSForest @HashArguments -InstallDns -force
- 
