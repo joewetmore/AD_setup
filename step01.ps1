@@ -1,8 +1,11 @@
- #STEP 01 - Name the computer and apply an IP address
+#STEP 01 - Name the computer and apply an IP address
 
 #Don't forget, 
 #  1) you will need to edit the CSV files first with data specific to the site
 #  2) run these steps from an elevated powershell prompt
+
+#Set the Log File Location
+$LogFile = "C:\AD_setup\logs\AD_setup.log"
 
 #Function to Create a Log File
 Function Write-Log {
@@ -19,6 +22,8 @@ Function Write-Log {
 
 
 Clear-Host
+
+Write-Log "Beginning STEP01 of AD_Setup"
 
 #Setup path
 $path = "C:\AD_setup"
@@ -70,7 +75,8 @@ $adapter | New-NetIPAddress `
  -DefaultGateway $Gateway
 # Configure the DNS client server IP addresses
 $adapter | Set-DnsClientServerAddress -ServerAddresses $DNS
-write-log "applied the static IP address" 
+write-log "applying the static IP address" 
+Write-Log -level ERROR -message "ERROR applying the static IP address" 
 
 #Rename the computer
 Write-Host "-----------------------------------------------" -ForegroundColor Green
@@ -82,7 +88,8 @@ $Password = read-host "Please enter the local administrator account password" -A
 $pass = ConvertTo-SecureString -AsPlainText $Password -Force
 $Cred = New-Object System.Management.Automation.PSCredential -ArgumentList $Username,$pass
 Rename-Computer -NewName $dc01name -DomainCredential $Cred 
-write-log "renamed the computer" 
+write-log "renaming the computer" 
+Write-Log -level ERROR -message "ERROR renaming the computer" 
 
 Write-Host " "
 Write-Host "-----------------------------------------------" -ForegroundColor Green
@@ -90,4 +97,4 @@ Write-Host "-----Rebooting---------------------------------" -ForegroundColor Gr
 Write-Host "-----------------------------------------------" -ForegroundColor Green
 Write-Host " "
 Start-Sleep -Seconds 5
-Restart-Computer 
+Restart-Computer
