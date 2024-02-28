@@ -1,14 +1,11 @@
 Name,Location,Site,Description
-10.104.110.0/24,"Alpharetta,  GA",ALP,Alpharetta network
-10.60.0.0/24,"Alpharetta,  GA",ALP,Alpharetta network
-10.60.1.0/24,"Alpharetta,  GA",ALP,Alpharetta network
-172.16.7.0/24,"Alpharetta,  GA",ALP,Alpharetta network
 192.168.0.0/24,,Azure,
-10.212.110.0/24,"Chonburi, Thailand",BNK,Chonburi network
-10.90.0.0/24,"Chonburi, Thailand",BNK,Chonburi network
-10.91.0.0/16,"Chonburi, Thailand",BNK,Chonburi network
-172.16.9.0/24,"Chonburi, Thailand",BNK,Chonburi network
-10.106.110.0/24,"Lombard, IL",CHI,Lombard network
-10.21.0.0/16,"Lombard, IL",CHI,Lombard network
-10.20.0.0/24,"Lombard, IL",CHI,Lombard network
-172.16.10.0/24,"Lombard, IL",CHI,Lombard network
+192.168.1.0/24,"Alpharetta,  GA",ALP,Alpharetta network
+192.168.2.0/24,"Alpharetta,  GA",ALP,Alpharetta network
+192.168.3.0/24,"Alpharetta,  GA",ALP,Alpharetta network
+192.168.4.0/24,"Alpharetta,  GA",ALP,Alpharetta network
+192.168.5.0/24,"Chonburi, Thailand",BNK,Chonburi network
+192.168.6.0/24,"Chonburi, Thailand",BNK,Chonburi network
+192.168.7.0/24,"Chonburi, Thailand",BNK,Chonburi network
+192.168.8.0/24,"Lombard, IL",CHI,Lombard network
+192.168.9.0/24,"Lombard, IL",CHI,Lombard network
